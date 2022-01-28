@@ -10,6 +10,13 @@ public class HighScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        highScoreText.text = $"High Score : {NameScoreHandler.Instance.highScorePlayerName} : {NameScoreHandler.Instance.highScore}";
+        if (NameScoreHandler.Instance.highScore != 0)
+        {
+            highScoreText.text = $"High Score : {NameScoreHandler.Instance.highScorePlayerName} - {NameScoreHandler.Instance.highScore}";
+        }
+        else
+        {
+            highScoreText.text = null;
+        }
     }
 }

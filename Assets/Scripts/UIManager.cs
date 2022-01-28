@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -9,6 +10,19 @@ using UnityEditor;
 
 public class UIManager : MonoBehaviour
 {
+    public Text CurrentHighScore;
+
+    public void Update()
+    {
+        if (NameScoreHandler.Instance.highScore != 0)
+        {
+            CurrentHighScore.text = $"Current High Score : {NameScoreHandler.Instance.currentPlayerName} - {NameScoreHandler.Instance.highScore}";
+        }
+        else
+        {
+            CurrentHighScore.text = null;
+        }
+    }
 
     public void OnStartPress()
     {
