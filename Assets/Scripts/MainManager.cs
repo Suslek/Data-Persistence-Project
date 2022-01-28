@@ -75,8 +75,10 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
-        NameScoreHandler.Instance.TryChangeHighScore(m_Points);
+        
         m_GameOver = true;
         GameOverText.SetActive(true);
+        NameScoreHandler.Instance.TryChangeHighScore(m_Points);
+        NameScoreHandler.Instance.SaveHighScore();
     }
 }

@@ -14,13 +14,13 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        if (NameScoreHandler.Instance.highScore != 0)
+        if (NameScoreHandler.Instance.highScore > 0)
         {
-            CurrentHighScore.text = $"Current High Score : {NameScoreHandler.Instance.currentPlayerName} - {NameScoreHandler.Instance.highScore}";
+            CurrentHighScore.text = $"Current High Score : {NameScoreHandler.Instance.highScorePlayerName} - {NameScoreHandler.Instance.highScore}";
         }
         else
         {
-            CurrentHighScore.text = null;
+            CurrentHighScore.text = $"High Score is not set";
         }
     }
 
