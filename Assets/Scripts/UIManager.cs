@@ -23,4 +23,9 @@ public class UIManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+    public void OnNameEnter(string name)
+    {
+        NameScoreHandler.Instance.currentPlayerName = name;
+    }
 }

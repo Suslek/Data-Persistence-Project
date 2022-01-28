@@ -59,6 +59,11 @@ public class MainManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
@@ -70,6 +75,7 @@ public class MainManager : MonoBehaviour
 
     public void GameOver()
     {
+        NameScoreHandler.Instance.TryChangeHighScore(m_Points);
         m_GameOver = true;
         GameOverText.SetActive(true);
     }
